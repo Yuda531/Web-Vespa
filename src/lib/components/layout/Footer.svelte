@@ -4,7 +4,7 @@
 	import { MessageCircle } from 'lucide-svelte';
 </script>
 
-<footer class="border-t border-[var(--border)] bg-[var(--color-dark)] text-[var(--color-secondary)]">
+<footer class="border-t border-(--border) bg-(--color-dark) text-(--color-secondary)">
 	<div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
 		<div class="grid gap-8 md:grid-cols-3">
 			<!-- Brand -->
@@ -17,7 +17,7 @@
 
 			<!-- Links -->
 			<div>
-				<h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Navigasi</h4>
+				<h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-(--color-accent)">Navigasi</h4>
 				<ul class="mt-4 space-y-2">
 					{#each NAV_LINKS as link}
 						<li>
@@ -31,7 +31,7 @@
 
 			<!-- Contact -->
 			<div>
-				<h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)]">Hubungi Kami</h4>
+				<h4 class="font-serif text-sm font-semibold uppercase tracking-wider text-(--color-accent)">Hubungi Kami</h4>
 				<div class="mt-4 space-y-3">
 					<a
 						href={buildWhatsAppUrl(WA_MESSAGES.general)}

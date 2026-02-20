@@ -51,12 +51,12 @@
 
 		<!-- Details -->
 		<div class={service.images && service.images.length > 0 ? '' : 'lg:col-span-2 max-w-3xl'}>
-			<h1 class="font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">
+			<h1 class="font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">
 				{service.title}
 			</h1>
 
 			{#if service.price_range}
-				<p class="mt-2 text-lg font-medium text-[var(--color-accent)]">
+				<p class="mt-2 text-lg font-medium text-(--color-accent)">
 					{service.price_range}
 				</p>
 			{/if}
@@ -64,7 +64,7 @@
 			<Separator class="my-6" />
 
 			{#if service.description}
-				<div class="prose prose-sm max-w-none text-[var(--muted-foreground)]">
+				<div class="prose prose-sm max-w-none text-(--muted-foreground)">
 					{@html service.description}
 				</div>
 			{/if}

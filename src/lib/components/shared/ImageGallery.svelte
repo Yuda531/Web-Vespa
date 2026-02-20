@@ -19,7 +19,7 @@
 <div class={cn('space-y-3', className)}>
 	<!-- Main image -->
 	{#if selectedImage}
-		<div class="relative aspect-[4/3] overflow-hidden rounded-(--radius) border border-[var(--border)]">
+		<div class="relative aspect-4/3 overflow-hidden rounded-(--radius) border border-(--border)">
 			{#key selectedImage.url}
 				<OptimizedImage
 					src={selectedImage.url}
@@ -38,9 +38,9 @@
 				<button
 					onclick={() => (selectedIndex = idx)}
 					class={cn(
-						'h-16 w-16 flex-shrink-0 overflow-hidden rounded-md border-2 transition-all duration-200 cursor-pointer',
+						'h-16 w-16 shrink-0 overflow-hidden rounded-md border-2 transition-all duration-200 cursor-pointer',
 						idx === selectedIndex
-							? 'border-[var(--primary)] ring-2 ring-[var(--primary)]/30 scale-105'
+							? 'border-(--primary) ring-2 ring-(--primary)/30 scale-105'
 							: 'border-transparent opacity-70 hover:opacity-100'
 					)}
 				>

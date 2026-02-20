@@ -78,8 +78,8 @@
 	<!-- Drop zone -->
 	<div
 		class={cn(
-			'flex min-h-[120px] cursor-pointer flex-col items-center justify-center rounded-(--radius) border-2 border-dashed p-6 transition-colors',
-			dragover ? 'border-[var(--primary)] bg-[var(--primary)]/5' : 'border-[var(--border)] hover:border-[var(--primary)]'
+			'flex min-h-30 cursor-pointer flex-col items-center justify-center rounded-(--radius) border-2 border-dashed p-6 transition-colors',
+			dragover ? 'border-(--primary) bg-(--primary)/5' : 'border-(--border) hover:border-(--primary)'
 		)}
 		ondragover={(e) => { e.preventDefault(); dragover = true; }}
 		ondragleave={() => (dragover = false)}
@@ -89,8 +89,8 @@
 		role="button"
 		tabindex="0"
 	>
-		<Upload class="mb-2 h-8 w-8 text-[var(--muted-foreground)]" />
-		<p class="text-sm text-[var(--muted-foreground)]">
+		<Upload class="mb-2 h-8 w-8 text-(--muted-foreground)" />
+		<p class="text-sm text-(--muted-foreground)">
 			Drag & drop or click to upload
 		</p>
 	</div>
@@ -108,7 +108,7 @@
 	{#if images.length > 0}
 		<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 			{#each images as img, idx}
-				<div class="group relative overflow-hidden rounded-(--radius) border border-[var(--border)]">
+				<div class="group relative overflow-hidden rounded-(--radius) border border-(--border)">
 					<img src={img.url} alt={img.alt_text} class="aspect-square w-full object-cover" />
 					<div class="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
 						<Button size="sm" variant={img.is_primary ? 'default' : 'secondary'} onclick={() => setPrimary(idx)}>
@@ -119,7 +119,7 @@
 						</Button>
 					</div>
 					{#if img.is_primary}
-						<span class="absolute top-2 left-2 rounded bg-[var(--primary)] px-2 py-0.5 text-xs text-white">Primary</span>
+						<span class="absolute top-2 left-2 rounded bg-(--primary) px-2 py-0.5 text-xs text-white">Primary</span>
 					{/if}
 				</div>
 			{/each}

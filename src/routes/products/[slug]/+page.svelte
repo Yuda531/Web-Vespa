@@ -66,11 +66,11 @@
 			<div class="mb-2 flex items-center gap-3">
 				<StatusBadge status={product.status} />
 				{#if product.category}
-					<span class="text-sm text-[var(--muted-foreground)]">{product.category.name}</span>
+					<span class="text-sm text-(--muted-foreground)">{product.category.name}</span>
 				{/if}
 			</div>
 
-			<h1 class="font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">
+			<h1 class="font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">
 				{product.title}
 			</h1>
 
@@ -82,22 +82,22 @@
 			<div class="grid grid-cols-2 gap-4">
 				{#if product.year}
 					<div class="flex items-center gap-2 text-sm">
-						<Calendar class="h-4 w-4 text-[var(--muted-foreground)]" />
-						<span class="text-[var(--muted-foreground)]">Tahun:</span>
+						<Calendar class="h-4 w-4 text-(--muted-foreground)" />
+						<span class="text-(--muted-foreground)">Tahun:</span>
 						<span class="font-medium">{product.year}</span>
 					</div>
 				{/if}
 				{#if product.condition}
 					<div class="flex items-center gap-2 text-sm">
-						<Wrench class="h-4 w-4 text-[var(--muted-foreground)]" />
-						<span class="text-[var(--muted-foreground)]">Kondisi:</span>
+						<Wrench class="h-4 w-4 text-(--muted-foreground)" />
+						<span class="text-(--muted-foreground)">Kondisi:</span>
 						<span class="font-medium">{product.condition}</span>
 					</div>
 				{/if}
 				{#if product.category}
 					<div class="flex items-center gap-2 text-sm">
-						<Tag class="h-4 w-4 text-[var(--muted-foreground)]" />
-						<span class="text-[var(--muted-foreground)]">Kategori:</span>
+						<Tag class="h-4 w-4 text-(--muted-foreground)" />
+						<span class="text-(--muted-foreground)">Kategori:</span>
 						<span class="font-medium">{product.category.name}</span>
 					</div>
 				{/if}
@@ -107,7 +107,7 @@
 
 			<!-- Description -->
 			{#if product.description}
-				<div class="prose prose-sm max-w-none text-[var(--muted-foreground)]">
+				<div class="prose prose-sm max-w-none text-(--muted-foreground)">
 					{@html product.description}
 				</div>
 			{/if}
@@ -127,7 +127,7 @@
 	{#if data.relatedProducts.length > 0}
 		<Separator class="my-12" />
 		<div>
-			<h2 class="font-serif text-2xl font-bold text-[var(--foreground)]">Produk Serupa</h2>
+			<h2 class="font-serif text-2xl font-bold text-(--foreground)">Produk Serupa</h2>
 			<div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{#each data.relatedProducts as product}
 					<ProductCard {product} />

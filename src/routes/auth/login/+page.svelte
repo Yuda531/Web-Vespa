@@ -55,7 +55,7 @@
 			</form>
 		</CardContent>
 		<CardFooter class="justify-center">
-			<a href="/" class="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)]">
+			<a href="/" class="text-sm text-(--muted-foreground) hover:text-(--foreground)">
 				&larr; Kembali ke beranda
 			</a>
 		</CardFooter>

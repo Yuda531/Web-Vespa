@@ -12,28 +12,28 @@
 <section class="py-16 lg:py-24">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="text-center">
-			<p class="text-sm font-medium uppercase tracking-widest text-[var(--color-accent)]">Testimoni</p>
-			<h2 class="mt-2 font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">
+			<p class="text-sm font-medium uppercase tracking-widest text-(--color-accent)">Testimoni</p>
+			<h2 class="mt-2 font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">
 				Kata Pelanggan Kami
 			</h2>
 		</div>
 
 		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each testimonials as testimonial}
-				<div class="rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6 shadow-sm">
+				<div class="rounded-(--radius) border border-(--border) bg-(--card) p-6 shadow-sm">
 					<!-- Stars -->
 					<div class="flex gap-1">
 						{#each Array(5) as _, idx}
 							<Star
 								class="h-4 w-4 {idx < testimonial.rating
-									? 'fill-[var(--color-accent)] text-[var(--color-accent)]'
+									? 'fill-(--color-accent) text-(--color-accent)'
 									: 'text-gray-300'}"
 							/>
 						{/each}
 					</div>
 
 					<!-- Content -->
-					<p class="mt-4 text-sm text-[var(--muted-foreground)] italic">
+					<p class="mt-4 text-sm text-(--muted-foreground) italic">
 						"{testimonial.content}"
 					</p>
 
@@ -47,11 +47,11 @@
 								loading="lazy"
 							/>
 						{:else}
-							<div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--primary)] text-sm font-bold text-white">
+							<div class="flex h-10 w-10 items-center justify-center rounded-full bg-(--primary) text-sm font-bold text-white">
 								{testimonial.customer_name.charAt(0).toUpperCase()}
 							</div>
 						{/if}
-						<span class="text-sm font-medium text-[var(--foreground)]">
+						<span class="text-sm font-medium text-(--foreground)">
 							{testimonial.customer_name}
 						</span>
 					</div>

@@ -17,7 +17,7 @@
 			{#snippet children()}<Plus class="h-4 w-4" /> Add Testimonial{/snippet}
 		</Button>
 	</div>
-	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)]">
+	<div class="mt-6 rounded-(--radius) border border-(--border) bg-(--card)">
 		<Table>
 			{#snippet children()}
 				<TableHeader>
@@ -63,7 +63,7 @@
 					{/each}
 					{#if data.testimonials.length === 0}
 						<TableRow>
-							<TableCell class="text-center text-[var(--muted-foreground)]" colspan="4">No testimonials found</TableCell>
+							<TableCell class="text-center text-(--muted-foreground)" colspan="4">No testimonials found</TableCell>
 						</TableRow>
 					{/if}
 				</TableBody>

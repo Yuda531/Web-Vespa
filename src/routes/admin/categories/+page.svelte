@@ -22,7 +22,7 @@
 <div>
 	<h1 class="font-serif text-2xl font-bold">Categories</h1>
 
-	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6">
+	<div class="mt-6 rounded-(--radius) border border-(--border) bg-(--card) p-6">
 		<h2 class="font-serif text-lg font-semibold mb-4">Add Category</h2>
 		<form method="POST" action="?/create" use:enhance class="flex gap-3 items-end">
 			<div class="flex-1 space-y-1">
@@ -39,7 +39,7 @@
 		</form>
 	</div>
 
-	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)]">
+	<div class="mt-6 rounded-(--radius) border border-(--border) bg-(--card)">
 		<Table>
 			{#snippet children()}
 				<TableHeader>
@@ -53,7 +53,7 @@
 					{#each data.categories as category}
 						<TableRow>
 							<TableCell class="font-medium">{category.name}</TableCell>
-							<TableCell class="text-[var(--muted-foreground)]">{category.slug}</TableCell>
+							<TableCell class="text-(--muted-foreground)">{category.slug}</TableCell>
 							<TableCell class="text-right">
 								<form method="POST" action="?/delete" use:enhance>
 									<input type="hidden" name="id" value={category.id} />
@@ -66,7 +66,7 @@
 					{/each}
 					{#if data.categories.length === 0}
 						<TableRow>
-							<TableCell class="text-center text-[var(--muted-foreground)]" colspan="3">No categories yet</TableCell>
+							<TableCell class="text-center text-(--muted-foreground)" colspan="3">No categories yet</TableCell>
 						</TableRow>
 					{/if}
 				</TableBody>

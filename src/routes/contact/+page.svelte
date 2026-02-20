@@ -20,16 +20,16 @@
 	<Breadcrumb items={breadcrumbs} class="mb-6" />
 
 	<div class="mx-auto max-w-3xl">
-		<h1 class="font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">Hubungi Kami</h1>
-		<p class="mt-2 text-[var(--muted-foreground)]">
+		<h1 class="font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">Hubungi Kami</h1>
+		<p class="mt-2 text-(--muted-foreground)">
 			Kami senang mendengar dari Anda. Hubungi kami melalui WhatsApp untuk respons tercepat.
 		</p>
 
 		<div class="mt-8 grid gap-6 sm:grid-cols-2">
 			<!-- WhatsApp CTA -->
-			<div class="rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6">
-				<h2 class="font-serif text-lg font-semibold text-[var(--foreground)]">WhatsApp</h2>
-				<p class="mt-2 text-sm text-[var(--muted-foreground)]">
+			<div class="rounded-(--radius) border border-(--border) bg-(--card) p-6">
+				<h2 class="font-serif text-lg font-semibold text-(--foreground)">WhatsApp</h2>
+				<p class="mt-2 text-sm text-(--muted-foreground)">
 					Cara tercepat untuk menghubungi kami. Klik tombol di bawah untuk langsung chat.
 				</p>
 				<div class="mt-4">
@@ -38,9 +38,9 @@
 			</div>
 
 			<!-- Address -->
-			<div class="rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6">
-				<h2 class="font-serif text-lg font-semibold text-[var(--foreground)]">Lokasi</h2>
-				<div class="mt-4 space-y-3 text-sm text-[var(--muted-foreground)]">
+			<div class="rounded-(--radius) border border-(--border) bg-(--card) p-6">
+				<h2 class="font-serif text-lg font-semibold text-(--foreground)">Lokasi</h2>
+				<div class="mt-4 space-y-3 text-sm text-(--muted-foreground)">
 					<div class="flex items-start gap-2">
 						<MapPin class="mt-0.5 h-4 w-4 flex-shrink-0" />
 						<span>Indonesia</span>

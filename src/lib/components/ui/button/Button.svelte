@@ -28,12 +28,12 @@
 	}: Props = $props();
 
 	const variantClasses: Record<Variant, string> = {
-		default: 'bg-[var(--primary)] text-[var(--primary-foreground)] hover:bg-[var(--primary)]/90',
+		default: 'bg-(--primary) text-[var(--primary-foreground)] hover:bg-(--primary)/90',
 		destructive: 'bg-[var(--destructive)] text-[var(--destructive-foreground)] hover:bg-[var(--destructive)]/90',
-		outline: 'border border-[var(--input)] bg-transparent hover:bg-[var(--secondary)] hover:text-[var(--foreground)]',
-		secondary: 'bg-[var(--secondary)] text-[var(--secondary-foreground)] hover:bg-[var(--secondary)]/80',
-		ghost: 'hover:bg-[var(--secondary)] hover:text-[var(--foreground)]',
-		link: 'text-[var(--primary)] underline-offset-4 hover:underline'
+		outline: 'border border-(--input) bg-transparent hover:bg-(--secondary) hover:text-(--foreground)',
+		secondary: 'bg-(--secondary) text-[var(--secondary-foreground)] hover:bg-(--secondary)/80',
+		ghost: 'hover:bg-(--secondary) hover:text-(--foreground)',
+		link: 'text-(--primary) underline-offset-4 hover:underline'
 	};
 
 	const sizeClasses: Record<Size, string> = {

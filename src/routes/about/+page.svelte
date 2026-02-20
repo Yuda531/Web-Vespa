@@ -19,9 +19,9 @@
 	<Breadcrumb items={breadcrumbs} class="mb-6" />
 
 	<div class="mx-auto max-w-3xl">
-		<h1 class="font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">Tentang {SITE_NAME}</h1>
+		<h1 class="font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">Tentang {SITE_NAME}</h1>
 
-		<div class="mt-8 space-y-6 text-[var(--muted-foreground)] leading-relaxed">
+		<div class="mt-8 space-y-6 text-(--muted-foreground) leading-relaxed">
 			<p>
 				{SITE_NAME} lahir dari kecintaan mendalam terhadap Vespa klasik — ikon kendaraan roda dua
 				yang telah menjadi bagian dari budaya dan gaya hidup sejak puluhan tahun lalu.
@@ -33,27 +33,27 @@
 				dan sentuhan tangan terampil dari para mekanik berpengalaman kami.
 			</p>
 
-			<div class="rounded-(--radius) bg-[var(--secondary)] p-6">
-				<h2 class="font-serif text-xl font-bold text-[var(--foreground)]">Mengapa Memilih Kami?</h2>
+			<div class="rounded-(--radius) bg-(--secondary) p-6">
+				<h2 class="font-serif text-xl font-bold text-(--foreground)">Mengapa Memilih Kami?</h2>
 				<ul class="mt-4 space-y-3">
 					<li class="flex gap-3">
-						<span class="text-[var(--color-accent)]">&#10003;</span>
+						<span class="text-(--color-accent)">&#10003;</span>
 						<span>Pengalaman bertahun-tahun dalam restorasi Vespa klasik</span>
 					</li>
 					<li class="flex gap-3">
-						<span class="text-[var(--color-accent)]">&#10003;</span>
+						<span class="text-(--color-accent)">&#10003;</span>
 						<span>Suku cadang original dan berkualitas tinggi</span>
 					</li>
 					<li class="flex gap-3">
-						<span class="text-[var(--color-accent)]">&#10003;</span>
+						<span class="text-(--color-accent)">&#10003;</span>
 						<span>Garansi pada setiap unit yang kami jual</span>
 					</li>
 					<li class="flex gap-3">
-						<span class="text-[var(--color-accent)]">&#10003;</span>
+						<span class="text-(--color-accent)">&#10003;</span>
 						<span>Konsultasi gratis sebelum pembelian</span>
 					</li>
 					<li class="flex gap-3">
-						<span class="text-[var(--color-accent)]">&#10003;</span>
+						<span class="text-(--color-accent)">&#10003;</span>
 						<span>Layanan purna jual yang terpercaya</span>
 					</li>
 				</ul>

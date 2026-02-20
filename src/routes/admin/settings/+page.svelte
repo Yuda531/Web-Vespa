@@ -20,7 +20,7 @@
 		</div>
 	{/if}
 
-	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6">
+	<div class="mt-6 rounded-(--radius) border border-(--border) bg-(--card) p-6">
 		<form method="POST" use:enhance class="space-y-6">
 			<div class="space-y-2">
 				<Label for="site_title">Site Title</Label>

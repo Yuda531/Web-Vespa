@@ -15,8 +15,8 @@
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex items-end justify-between">
 			<div>
-				<p class="text-sm font-medium uppercase tracking-widest text-[var(--color-accent)]">Koleksi Kami</p>
-				<h2 class="mt-2 font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">
+				<p class="text-sm font-medium uppercase tracking-widest text-(--color-accent)">Koleksi Kami</p>
+				<h2 class="mt-2 font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">
 					Vespa Pilihan
 				</h2>
 			</div>

@@ -20,8 +20,8 @@
 	<Breadcrumb items={breadcrumbs} class="mb-6" />
 
 	<div class="mb-8">
-		<h1 class="font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">Layanan Kami</h1>
-		<p class="mt-2 text-[var(--muted-foreground)]">
+		<h1 class="font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">Layanan Kami</h1>
+		<p class="mt-2 text-(--muted-foreground)">
 			Layanan restorasi dan perawatan Vespa klasik oleh tenaga ahli berpengalaman.
 		</p>
 	</div>
@@ -34,7 +34,7 @@
 		</div>
 	{:else}
 		<div class="py-16 text-center">
-			<p class="text-lg text-[var(--muted-foreground)]">Belum ada layanan yang tersedia.</p>
+			<p class="text-lg text-(--muted-foreground)">Belum ada layanan yang tersedia.</p>
 		</div>
 	{/if}
 </div>

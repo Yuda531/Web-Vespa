@@ -16,6 +16,6 @@
 	};
 </script>
 
-<span class={cn('font-semibold text-[var(--primary)]', sizeClasses[size], className)}>
+<span class={cn('font-semibold text-(--primary)', sizeClasses[size], className)}>
 	{formatPrice(price)}
 </span>

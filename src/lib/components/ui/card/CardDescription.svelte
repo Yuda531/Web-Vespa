@@ -11,6 +11,6 @@
 	let { class: className, children, ...restProps }: Props = $props();
 </script>
 
-<p class={cn('text-sm text-[var(--muted-foreground)]', className)} {...restProps}>
+<p class={cn('text-sm text-(--muted-foreground)', className)} {...restProps}>
 	{#if children}{@render children()}{/if}
 </p>

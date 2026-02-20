@@ -25,19 +25,19 @@
 <div class="flex min-h-[60vh] flex-col items-center justify-center px-4 py-16 text-center">
 	<!-- Decorative vintage element -->
 	<div class="relative mb-8">
-		<div class="font-serif text-[8rem] font-bold leading-none text-[var(--primary)]/10 sm:text-[12rem]">
+		<div class="font-serif text-[8rem] font-bold leading-none text-(--primary)/10 sm:text-[12rem]">
 			{statusCode}
 		</div>
 		<div class="absolute inset-0 flex items-center justify-center">
-			<div class="rounded-full border-2 border-[var(--color-accent)] p-6">
+			<div class="rounded-full border-2 border-(--color-accent) p-6">
 				{#if is404}
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-12 w-12 text-[var(--color-accent)]">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-12 w-12 text-(--color-accent)">
 						<circle cx="11" cy="11" r="8" />
 						<line x1="21" y1="21" x2="16.65" y2="16.65" />
 						<line x1="8" y1="11" x2="14" y2="11" />
 					</svg>
 				{:else}
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-12 w-12 text-[var(--color-accent)]">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-12 w-12 text-(--color-accent)">
 						<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
 						<line x1="12" y1="9" x2="12" y2="13" />
 						<line x1="12" y1="17" x2="12.01" y2="17" />
@@ -47,16 +47,16 @@
 		</div>
 	</div>
 
-	<h1 class="font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">
+	<h1 class="font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">
 		{title}
 	</h1>
 
-	<p class="mx-auto mt-4 max-w-md text-lg text-[var(--muted-foreground)]">
+	<p class="mx-auto mt-4 max-w-md text-lg text-(--muted-foreground)">
 		{description}
 	</p>
 
 	{#if !is404 && errorMessage}
-		<p class="mx-auto mt-2 max-w-md text-sm text-[var(--muted-foreground)]/70">
+		<p class="mx-auto mt-2 max-w-md text-sm text-(--muted-foreground)/70">
 			Detail: {errorMessage}
 		</p>
 	{/if}
@@ -89,8 +89,8 @@
 
 	<!-- Vintage decorative line -->
 	<div class="mt-12 flex items-center gap-4">
-		<div class="h-px w-16 bg-[var(--border)]"></div>
-		<span class="font-serif text-sm italic text-[var(--muted-foreground)]">{SITE_NAME}</span>
-		<div class="h-px w-16 bg-[var(--border)]"></div>
+		<div class="h-px w-16 bg-(--border)"></div>
+		<span class="font-serif text-sm italic text-(--muted-foreground)">{SITE_NAME}</span>
+		<div class="h-px w-16 bg-(--border)"></div>
 	</div>
 </div>

@@ -61,16 +61,16 @@
 
 	function btn(type: string, attrs?: Record<string, any>): string {
 		const base = 'p-1.5 rounded-(--radius) transition-colors cursor-pointer';
-		const active = 'bg-[var(--primary)] text-[var(--primary-foreground)]';
-		const inactive = 'text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)]';
+		const active = 'bg-(--primary) text-[var(--primary-foreground)]';
+		const inactive = 'text-(--muted-foreground) hover:bg-(--secondary) hover:text-(--foreground)';
 		return `${base} ${isActive(type, attrs) ? active : inactive}`;
 	}
 </script>
 
-<div class="rounded-(--radius) border border-[var(--input)] bg-transparent ring-offset-[var(--background)] focus-within:ring-2 focus-within:ring-[var(--ring)] focus-within:ring-offset-2 overflow-hidden">
+<div class="rounded-(--radius) border border-(--input) bg-transparent ring-offset-(--background) focus-within:ring-2 focus-within:ring-(--ring) focus-within:ring-offset-2 overflow-hidden">
 	<!-- Toolbar -->
 	{#if editor}
-		<div class="flex flex-wrap items-center gap-0.5 border-b border-[var(--input)] bg-[var(--secondary)]/50 px-2 py-1.5">
+		<div class="flex flex-wrap items-center gap-0.5 border-b border-(--input) bg-(--secondary)/50 px-2 py-1.5">
 			<button type="button" class={btn('bold')} onclick={() => editor?.chain().focus().toggleBold().run()} title="Bold">
 				<Bold class="h-4 w-4" />
 			</button>
@@ -78,7 +78,7 @@
 				<Italic class="h-4 w-4" />
 			</button>
 
-			<div class="mx-1 h-5 w-px bg-[var(--border)]"></div>
+			<div class="mx-1 h-5 w-px bg-(--border)"></div>
 
 			<button type="button" class={btn('heading', { level: 2 })} onclick={() => editor?.chain().focus().toggleHeading({ level: 2 }).run()} title="Heading 2">
 				<Heading2 class="h-4 w-4" />
@@ -87,7 +87,7 @@
 				<Heading3 class="h-4 w-4" />
 			</button>
 
-			<div class="mx-1 h-5 w-px bg-[var(--border)]"></div>
+			<div class="mx-1 h-5 w-px bg-(--border)"></div>
 
 			<button type="button" class={btn('bulletList')} onclick={() => editor?.chain().focus().toggleBulletList().run()} title="Bullet List">
 				<List class="h-4 w-4" />
@@ -96,25 +96,25 @@
 				<ListOrdered class="h-4 w-4" />
 			</button>
 
-			<div class="mx-1 h-5 w-px bg-[var(--border)]"></div>
+			<div class="mx-1 h-5 w-px bg-(--border)"></div>
 
 			<button type="button" class={btn('blockquote')} onclick={() => editor?.chain().focus().toggleBlockquote().run()} title="Quote">
 				<Quote class="h-4 w-4" />
 			</button>
 			<button
 				type="button"
-				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
+				class="p-1.5 rounded-(--radius) text-(--muted-foreground) hover:bg-(--secondary) hover:text-(--foreground) transition-colors cursor-pointer"
 				onclick={() => editor?.chain().focus().setHorizontalRule().run()}
 				title="Horizontal Rule"
 			>
 				<Minus class="h-4 w-4" />
 			</button>
 
-			<div class="mx-1 h-5 w-px bg-[var(--border)]"></div>
+			<div class="mx-1 h-5 w-px bg-(--border)"></div>
 
 			<button
 				type="button"
-				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
+				class="p-1.5 rounded-(--radius) text-(--muted-foreground) hover:bg-(--secondary) hover:text-(--foreground) transition-colors cursor-pointer"
 				onclick={() => editor?.chain().focus().clearNodes().unsetAllMarks().run()}
 				title="Clear Formatting"
 			>
@@ -125,7 +125,7 @@
 
 			<button
 				type="button"
-				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+				class="p-1.5 rounded-(--radius) text-(--muted-foreground) hover:bg-(--secondary) hover:text-(--foreground) transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
 				onclick={() => editor?.chain().focus().undo().run()}
 				disabled={!editor?.can().undo()}
 				title="Undo"
@@ -134,7 +134,7 @@
 			</button>
 			<button
 				type="button"
-				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+				class="p-1.5 rounded-(--radius) text-(--muted-foreground) hover:bg-(--secondary) hover:text-(--foreground) transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
 				onclick={() => editor?.chain().focus().redo().run()}
 				disabled={!editor?.can().redo()}
 				title="Redo"

@@ -13,7 +13,7 @@
 	{#each Array(lines) as _, i}
 		<div
 			class={cn(
-				'rounded bg-[var(--muted)]',
+				'rounded bg-(--muted)',
 				i === lines - 1 ? 'h-4 w-3/4' : 'h-4 w-full'
 			)}
 		></div>

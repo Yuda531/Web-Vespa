@@ -11,14 +11,14 @@
 	let { services }: Props = $props();
 </script>
 
-<section class="bg-[var(--secondary)]/50 py-16 lg:py-24">
+<section class="bg-(--secondary)/50 py-16 lg:py-24">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="text-center">
-			<p class="text-sm font-medium uppercase tracking-widest text-[var(--color-accent)]">Layanan Kami</p>
-			<h2 class="mt-2 font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">
+			<p class="text-sm font-medium uppercase tracking-widest text-(--color-accent)">Layanan Kami</p>
+			<h2 class="mt-2 font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">
 				Restorasi & Perawatan
 			</h2>
-			<p class="mt-3 text-[var(--muted-foreground)]">
+			<p class="mt-3 text-(--muted-foreground)">
 				Percayakan Vespa Anda pada tangan ahli. Dari restorasi penuh hingga perawatan berkala.
 			</p>
 		</div>

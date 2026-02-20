@@ -17,7 +17,7 @@
 			{#snippet children()}<Plus class="h-4 w-4" /> Add Service{/snippet}
 		</Button>
 	</div>
-	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)]">
+	<div class="mt-6 rounded-(--radius) border border-(--border) bg-(--card)">
 		<Table>
 			{#snippet children()}
 				<TableHeader>
@@ -51,7 +51,7 @@
 					{/each}
 					{#if data.services.length === 0}
 						<TableRow>
-							<TableCell class="text-center text-[var(--muted-foreground)]" colspan="4">No services found</TableCell>
+							<TableCell class="text-center text-(--muted-foreground)" colspan="4">No services found</TableCell>
 						</TableRow>
 					{/if}
 				</TableBody>

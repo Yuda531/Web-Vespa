@@ -13,10 +13,10 @@
 	let { variant = 'default', class: className, children }: Props = $props();
 
 	const variantClasses: Record<Variant, string> = {
-		default: 'bg-[var(--primary)] text-[var(--primary-foreground)]',
-		secondary: 'bg-[var(--secondary)] text-[var(--secondary-foreground)]',
+		default: 'bg-(--primary) text-[var(--primary-foreground)]',
+		secondary: 'bg-(--secondary) text-[var(--secondary-foreground)]',
 		destructive: 'bg-[var(--destructive)] text-[var(--destructive-foreground)]',
-		outline: 'border border-[var(--border)] text-[var(--foreground)]'
+		outline: 'border border-(--border) text-(--foreground)'
 	};
 </script>
 

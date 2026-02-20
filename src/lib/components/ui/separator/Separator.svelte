@@ -13,7 +13,7 @@
 	role="separator"
 	aria-orientation={orientation}
 	class={cn(
-		'shrink-0 bg-[var(--border)]',
+		'shrink-0 bg-(--border)',
 		orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
 		className
 	)}

@@ -13,7 +13,7 @@
 	</div>
 
 	<h1 class="mt-4 font-serif text-2xl font-bold">Error {statusCode}</h1>
-	<p class="mt-2 max-w-md text-[var(--muted-foreground)]">{errorMessage}</p>
+	<p class="mt-2 max-w-md text-(--muted-foreground)">{errorMessage}</p>
 
 	<div class="mt-6 flex gap-3">
 		<Button href="/admin" variant="default">

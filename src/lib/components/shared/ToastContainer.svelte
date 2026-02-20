@@ -32,11 +32,11 @@
 </script>
 
 {#if toastList.length > 0}
-	<div class="fixed top-4 right-4 z-[100] flex flex-col gap-2">
+	<div class="fixed top-4 right-4 z-100 flex flex-col gap-2">
 		{#each toastList as toast (toast.id)}
 			{@const IconComponent = iconMap[toast.type]}
 			<div
-				class="flex min-w-[300px] max-w-[420px] items-start gap-3 rounded-lg border p-4 shadow-lg {colorMap[toast.type]}"
+				class="flex min-w-75 max-w-105 items-start gap-3 rounded-lg border p-4 shadow-lg {colorMap[toast.type]}"
 				in:fly={{ x: 100, duration: 250 }}
 				out:fade={{ duration: 150 }}
 				role="alert"

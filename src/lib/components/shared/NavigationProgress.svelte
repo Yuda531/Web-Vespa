@@ -5,8 +5,8 @@
 </script>
 
 {#if isNavigating}
-	<div class="fixed top-0 left-0 right-0 z-[200]">
-		<div class="nav-progress-bar h-0.5 bg-[var(--color-accent)]"></div>
+	<div class="fixed top-0 left-0 right-0 z-200">
+		<div class="nav-progress-bar h-0.5 bg-(--color-accent)"></div>
 	</div>
 {/if}
 

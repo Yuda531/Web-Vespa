@@ -3,7 +3,7 @@
 	import { WA_MESSAGES } from '$lib/constants';
 </script>
 
-<section class="vintage-grain bg-[var(--primary)] py-16 lg:py-20">
+<section class="vintage-grain bg-(--primary) py-16 lg:py-20">
 	<div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
 		<h2 class="font-serif text-3xl font-bold text-white sm:text-4xl">
 			Siap Memiliki Vespa Impian?

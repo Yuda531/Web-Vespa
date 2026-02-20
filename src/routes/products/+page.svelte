@@ -21,8 +21,8 @@
 	<Breadcrumb items={breadcrumbs} class="mb-6" />
 
 	<div class="mb-8">
-		<h1 class="font-serif text-3xl font-bold text-[var(--foreground)] sm:text-4xl">Koleksi Vespa</h1>
-		<p class="mt-2 text-[var(--muted-foreground)]">
+		<h1 class="font-serif text-3xl font-bold text-(--foreground) sm:text-4xl">Koleksi Vespa</h1>
+		<p class="mt-2 text-(--muted-foreground)">
 			Temukan Vespa klasik impian Anda dari koleksi kami yang telah direstorasi dengan penuh perhatian.
 		</p>
 	</div>
@@ -71,7 +71,7 @@
 		</div>
 	{:else}
 		<div class="py-16 text-center">
-			<p class="text-lg text-[var(--muted-foreground)]">Belum ada produk yang tersedia.</p>
+			<p class="text-lg text-(--muted-foreground)">Belum ada produk yang tersedia.</p>
 		</div>
 	{/if}
 </div>

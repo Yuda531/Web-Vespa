@@ -24,15 +24,15 @@
 	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
-<nav aria-label="Breadcrumb" class={cn('flex items-center gap-1 text-sm text-[var(--muted-foreground)]', className)}>
+<nav aria-label="Breadcrumb" class={cn('flex items-center gap-1 text-sm text-(--muted-foreground)', className)}>
 	{#each items as item, idx}
 		{#if idx > 0}
 			<ChevronRight class="h-3 w-3" />
 		{/if}
 		{#if idx === items.length - 1}
-			<span class="text-[var(--foreground)]">{item.label}</span>
+			<span class="text-(--foreground)">{item.label}</span>
 		{:else}
-			<a href={item.href} class="transition-colors hover:text-[var(--foreground)]">{item.label}</a>
+			<a href={item.href} class="transition-colors hover:text-(--foreground)">{item.label}</a>
 		{/if}
 	{/each}
 </nav>
