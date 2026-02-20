@@ -16,7 +16,7 @@
 <a
 	href="/services/{service.slug}"
 	class={cn(
-		'group block overflow-hidden rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1',
+		'group block overflow-hidden rounded-(--radius) border border-[var(--border)] bg-[var(--card)] shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-1',
 		className
 	)}
 >

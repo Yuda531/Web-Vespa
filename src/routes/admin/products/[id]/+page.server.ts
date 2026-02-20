@@ -37,19 +37,33 @@ export const actions: Actions = {
 		if (imagesJson) {
 			try {
 				const images = JSON.parse(imagesJson);
-				await locals.supabase.from('product_images').delete().eq('product_id', params.id);
-				if (images.length > 0) {
-					const imageRecords = images.map((img: any, idx: number) => ({
-						product_id: params.id,
-						cloudinary_public_id: img.public_id,
-						url: img.url,
-						alt_text: img.alt_text || null,
-						sort_order: idx,
-						is_primary: img.is_primary ?? idx === 0
-					}));
-					await locals.supabase.from('product_images').insert(imageRecords);
+				// Filter out images with missing Cloudinary data
+				const validImages = images.filter((img: any) => img.public_id && img.url);
+				if (validImages.length !== images.length) {
+					console.warn(`[product/update] Filtered out ${images.length - validImages.length} image(s) with missing public_id or url`);
 				}
-			} catch (e) { /* ignore */ }
+				// Prepare image records before deleting old ones
+				const imageRecords = validImages.map((img: any, idx: number) => ({
+					product_id: params.id,
+					cloudinary_public_id: img.public_id,
+					url: img.url,
+					alt_text: img.alt_text || null,
+					sort_order: idx,
+					is_primary: img.is_primary ?? idx === 0
+				}));
+				// Delete old images, then insert new ones
+				await locals.supabase.from('product_images').delete().eq('product_id', params.id);
+				if (imageRecords.length > 0) {
+					const { error: imgError } = await locals.supabase.from('product_images').insert(imageRecords);
+					if (imgError) {
+						console.error('[product/update] Failed to insert images:', imgError);
+						return fail(500, { error: 'Failed to save product images: ' + imgError.message });
+					}
+				}
+			} catch (e) {
+				console.error('[product/update] Failed to process images_json:', e);
+				return fail(500, { error: 'Failed to process image data' });
+			}
 		}
 
 		throw redirect(303, '/admin/products');

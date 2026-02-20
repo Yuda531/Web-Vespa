@@ -27,7 +27,7 @@
 
 		<div class="mt-8 grid gap-6 sm:grid-cols-2">
 			<!-- WhatsApp CTA -->
-			<div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+			<div class="rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6">
 				<h2 class="font-serif text-lg font-semibold text-[var(--foreground)]">WhatsApp</h2>
 				<p class="mt-2 text-sm text-[var(--muted-foreground)]">
 					Cara tercepat untuk menghubungi kami. Klik tombol di bawah untuk langsung chat.
@@ -38,7 +38,7 @@
 			</div>
 
 			<!-- Address -->
-			<div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+			<div class="rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6">
 				<h2 class="font-serif text-lg font-semibold text-[var(--foreground)]">Lokasi</h2>
 				<div class="mt-4 space-y-3 text-sm text-[var(--muted-foreground)]">
 					<div class="flex items-start gap-2">

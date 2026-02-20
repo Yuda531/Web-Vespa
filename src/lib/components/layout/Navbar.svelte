@@ -28,7 +28,7 @@
 				<a
 					href={link.href}
 					class={cn(
-						'rounded-[var(--radius)] px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--secondary)] hover:text-[var(--foreground)]',
+						'rounded-(--radius) px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--secondary)] hover:text-[var(--foreground)]',
 						$page.url.pathname === link.href || ($page.url.pathname.startsWith(link.href) && link.href !== '/')
 							? 'bg-[var(--secondary)] text-[var(--foreground)]'
 							: 'text-[var(--muted-foreground)]'
@@ -41,7 +41,7 @@
 
 		<!-- Mobile toggle -->
 		<button
-			class="inline-flex items-center justify-center rounded-[var(--radius)] p-2 text-[var(--muted-foreground)] hover:bg-[var(--secondary)] md:hidden"
+			class="inline-flex items-center justify-center rounded-(--radius) p-2 text-[var(--muted-foreground)] hover:bg-[var(--secondary)] md:hidden"
 			onclick={toggleMobile}
 			aria-label="Toggle menu"
 		>
@@ -62,7 +62,7 @@
 						href={link.href}
 						onclick={closeMobile}
 						class={cn(
-							'block rounded-[var(--radius)] px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--secondary)]',
+							'block rounded-(--radius) px-3 py-2 text-sm font-medium transition-colors hover:bg-[var(--secondary)]',
 							$page.url.pathname === link.href || ($page.url.pathname.startsWith(link.href) && link.href !== '/')
 								? 'bg-[var(--secondary)] text-[var(--foreground)]'
 								: 'text-[var(--muted-foreground)]'

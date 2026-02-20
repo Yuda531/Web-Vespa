@@ -10,7 +10,7 @@
 
 <div>
 	<h1 class="font-serif text-2xl font-bold">Add New Product</h1>
-	<div class="mt-6 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+	<div class="mt-6 rounded-(--radius) border border-(--border) bg-(--card) p-6">
 		<ProductForm categories={data.categories} bind:images formAction="?/create" submitLabel="Create Product" />
 	</div>
 </div>

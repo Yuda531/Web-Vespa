@@ -21,7 +21,7 @@
 		<CardContent>
 			<form method="POST" use:enhance class="space-y-4">
 				{#if form?.error}
-					<div class="rounded-[var(--radius)] bg-red-50 p-3 text-sm text-red-600">
+					<div class="rounded-(--radius) bg-red-50 p-3 text-sm text-red-600">
 						{form.error}
 					</div>
 				{/if}

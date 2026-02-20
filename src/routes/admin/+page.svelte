@@ -26,7 +26,7 @@
 
 	<div class="mt-8">
 		<h2 class="font-serif text-lg font-semibold">Recent Products</h2>
-		<div class="mt-3 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)]">
+		<div class="mt-3 rounded-(--radius) border border-[var(--border)] bg-[var(--card)]">
 			{#each data.recentProducts as product}
 				<a href="/admin/products/{product.id}" class="flex items-center justify-between border-b border-[var(--border)] px-4 py-3 last:border-0 hover:bg-[var(--secondary)]/50 transition-colors">
 					<span class="text-sm font-medium">{product.title}</span>

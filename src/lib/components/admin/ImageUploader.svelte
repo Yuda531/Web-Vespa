@@ -78,7 +78,7 @@
 	<!-- Drop zone -->
 	<div
 		class={cn(
-			'flex min-h-[120px] cursor-pointer flex-col items-center justify-center rounded-[var(--radius)] border-2 border-dashed p-6 transition-colors',
+			'flex min-h-[120px] cursor-pointer flex-col items-center justify-center rounded-(--radius) border-2 border-dashed p-6 transition-colors',
 			dragover ? 'border-[var(--primary)] bg-[var(--primary)]/5' : 'border-[var(--border)] hover:border-[var(--primary)]'
 		)}
 		ondragover={(e) => { e.preventDefault(); dragover = true; }}
@@ -108,7 +108,7 @@
 	{#if images.length > 0}
 		<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 			{#each images as img, idx}
-				<div class="group relative overflow-hidden rounded-[var(--radius)] border border-[var(--border)]">
+				<div class="group relative overflow-hidden rounded-(--radius) border border-[var(--border)]">
 					<img src={img.url} alt={img.alt_text} class="aspect-square w-full object-cover" />
 					<div class="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
 						<Button size="sm" variant={img.is_primary ? 'default' : 'secondary'} onclick={() => setPrimary(idx)}>

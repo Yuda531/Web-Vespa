@@ -33,7 +33,7 @@
 				dan sentuhan tangan terampil dari para mekanik berpengalaman kami.
 			</p>
 
-			<div class="rounded-[var(--radius)] bg-[var(--secondary)] p-6">
+			<div class="rounded-(--radius) bg-[var(--secondary)] p-6">
 				<h2 class="font-serif text-xl font-bold text-[var(--foreground)]">Mengapa Memilih Kami?</h2>
 				<ul class="mt-4 space-y-3">
 					<li class="flex gap-3">

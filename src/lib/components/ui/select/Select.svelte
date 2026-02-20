@@ -15,7 +15,7 @@
 <select
 	bind:value
 	class={cn(
-		'flex h-10 w-full items-center justify-between rounded-[var(--radius)] border border-[var(--input)] bg-transparent px-3 py-2 text-sm ring-offset-[var(--background)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+		'flex h-10 w-full items-center justify-between rounded-(--radius) border border-[var(--input)] bg-transparent px-3 py-2 text-sm ring-offset-[var(--background)] placeholder:text-[var(--muted-foreground)] focus:outline-none focus:ring-2 focus:ring-[var(--ring)] focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
 		className
 	)}
 	{...restProps}

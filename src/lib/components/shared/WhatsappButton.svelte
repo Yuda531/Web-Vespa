@@ -16,7 +16,7 @@
 
 	const href = $derived(buildWhatsAppUrl(message));
 
-	const baseClasses = 'inline-flex items-center justify-center gap-2 rounded-[var(--radius)] font-medium transition-colors cursor-pointer';
+	const baseClasses = 'inline-flex items-center justify-center gap-2 rounded-(--radius) font-medium transition-colors cursor-pointer';
 	const variantClasses = {
 		default: 'bg-green-600 text-white hover:bg-green-700',
 		outline: 'border-2 border-green-600 text-green-600 hover:bg-green-50'

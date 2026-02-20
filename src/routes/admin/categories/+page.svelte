@@ -22,7 +22,7 @@
 <div>
 	<h1 class="font-serif text-2xl font-bold">Categories</h1>
 
-	<div class="mt-6 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6">
+	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6">
 		<h2 class="font-serif text-lg font-semibold mb-4">Add Category</h2>
 		<form method="POST" action="?/create" use:enhance class="flex gap-3 items-end">
 			<div class="flex-1 space-y-1">
@@ -39,7 +39,7 @@
 		</form>
 	</div>
 
-	<div class="mt-6 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)]">
+	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)]">
 		<Table>
 			{#snippet children()}
 				<TableHeader>

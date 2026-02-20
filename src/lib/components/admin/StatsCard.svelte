@@ -13,7 +13,7 @@
 	let { title, value, description, icon, class: className }: Props = $props();
 </script>
 
-<div class={cn('rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6', className)}>
+<div class={cn('rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6', className)}>
 	<div class="flex items-center justify-between">
 		<p class="text-sm font-medium text-[var(--muted-foreground)]">{title}</p>
 		{#if icon}

@@ -37,7 +37,7 @@
 						href={buildWhatsAppUrl(WA_MESSAGES.general)}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="inline-flex items-center gap-2 rounded-[var(--radius)] bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700"
+						class="inline-flex items-center gap-2 rounded-(--radius) bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700"
 					>
 						<MessageCircle class="h-4 w-4" />
 						Chat via WhatsApp

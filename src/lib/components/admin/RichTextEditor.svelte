@@ -60,14 +60,14 @@
 	}
 
 	function btn(type: string, attrs?: Record<string, any>): string {
-		const base = 'p-1.5 rounded-[var(--radius)] transition-colors cursor-pointer';
+		const base = 'p-1.5 rounded-(--radius) transition-colors cursor-pointer';
 		const active = 'bg-[var(--primary)] text-[var(--primary-foreground)]';
 		const inactive = 'text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)]';
 		return `${base} ${isActive(type, attrs) ? active : inactive}`;
 	}
 </script>
 
-<div class="rounded-[var(--radius)] border border-[var(--input)] bg-transparent ring-offset-[var(--background)] focus-within:ring-2 focus-within:ring-[var(--ring)] focus-within:ring-offset-2 overflow-hidden">
+<div class="rounded-(--radius) border border-[var(--input)] bg-transparent ring-offset-[var(--background)] focus-within:ring-2 focus-within:ring-[var(--ring)] focus-within:ring-offset-2 overflow-hidden">
 	<!-- Toolbar -->
 	{#if editor}
 		<div class="flex flex-wrap items-center gap-0.5 border-b border-[var(--input)] bg-[var(--secondary)]/50 px-2 py-1.5">
@@ -103,7 +103,7 @@
 			</button>
 			<button
 				type="button"
-				class="p-1.5 rounded-[var(--radius)] text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
+				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
 				onclick={() => editor?.chain().focus().setHorizontalRule().run()}
 				title="Horizontal Rule"
 			>
@@ -114,7 +114,7 @@
 
 			<button
 				type="button"
-				class="p-1.5 rounded-[var(--radius)] text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
+				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
 				onclick={() => editor?.chain().focus().clearNodes().unsetAllMarks().run()}
 				title="Clear Formatting"
 			>
@@ -125,7 +125,7 @@
 
 			<button
 				type="button"
-				class="p-1.5 rounded-[var(--radius)] text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
 				onclick={() => editor?.chain().focus().undo().run()}
 				disabled={!editor?.can().undo()}
 				title="Undo"
@@ -134,7 +134,7 @@
 			</button>
 			<button
 				type="button"
-				class="p-1.5 rounded-[var(--radius)] text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+				class="p-1.5 rounded-(--radius) text-[var(--muted-foreground)] hover:bg-[var(--secondary)] hover:text-[var(--foreground)] transition-colors cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
 				onclick={() => editor?.chain().focus().redo().run()}
 				disabled={!editor?.can().redo()}
 				title="Redo"

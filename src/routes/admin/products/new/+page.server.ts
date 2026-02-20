@@ -37,8 +37,13 @@ export const actions: Actions = {
 		if (imagesJson) {
 			try {
 				const images = JSON.parse(imagesJson);
-				if (images.length > 0) {
-					const imageRecords = images.map((img: any, idx: number) => ({
+				// Filter out images with missing Cloudinary data
+				const validImages = images.filter((img: any) => img.public_id && img.url);
+				if (validImages.length !== images.length) {
+					console.warn(`[product/new] Filtered out ${images.length - validImages.length} image(s) with missing public_id or url`);
+				}
+				if (validImages.length > 0) {
+					const imageRecords = validImages.map((img: any, idx: number) => ({
 						product_id: product.id,
 						cloudinary_public_id: img.public_id,
 						url: img.url,
@@ -46,9 +51,16 @@ export const actions: Actions = {
 						sort_order: idx,
 						is_primary: img.is_primary ?? idx === 0
 					}));
-					await locals.supabase.from('product_images').insert(imageRecords);
+					const { error: imgError } = await locals.supabase.from('product_images').insert(imageRecords);
+					if (imgError) {
+						console.error('[product/new] Failed to insert images:', imgError);
+						return fail(500, { error: 'Failed to save product images: ' + imgError.message });
+					}
 				}
-			} catch (e) { /* ignore parse errors */ }
+			} catch (e) {
+				console.error('[product/new] Failed to process images_json:', e);
+				return fail(500, { error: 'Failed to process image data' });
+			}
 		}
 
 		throw redirect(303, '/admin/products');

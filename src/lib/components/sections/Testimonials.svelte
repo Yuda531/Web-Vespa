@@ -20,7 +20,7 @@
 
 		<div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 			{#each testimonials as testimonial}
-				<div class="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)] p-6 shadow-sm">
+				<div class="rounded-(--radius) border border-[var(--border)] bg-[var(--card)] p-6 shadow-sm">
 					<!-- Stars -->
 					<div class="flex gap-1">
 						{#each Array(5) as _, idx}

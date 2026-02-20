@@ -22,7 +22,7 @@
 		</Button>
 	</div>
 
-	<div class="mt-6 rounded-[var(--radius)] border border-[var(--border)] bg-[var(--card)]">
+	<div class="mt-6 rounded-(--radius) border border-[var(--border)] bg-[var(--card)]">
 		<Table>
 			{#snippet children()}
 				<TableHeader>

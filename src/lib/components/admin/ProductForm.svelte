@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { cn } from '$lib/utils';
 	import { enhance } from '$app/forms';
 	import { Input } from '$lib/components/ui/input';
@@ -41,6 +42,8 @@
 	let autoSlug = $state(!product?.slug);
 	let submitting = $state(false);
 	let uploadProgress = $state('');
+	let readyToSubmit = $state(false);
+	let formEl: HTMLFormElement;
 
 	$effect(() => {
 		if (autoSlug && title) {
@@ -98,17 +101,17 @@
 </script>
 
 <form
+	bind:this={formEl}
 	method="POST"
 	action={formAction}
 	class="space-y-6"
-	use:enhance={() => {
+	use:enhance={({ cancel }) => {
 		submitting = true;
-		return async ({ result, update }) => {
-			try {
-				// Upload any pending images first
-				await uploadPendingImages();
-				
-				// Then proceed with normal form submission
+
+		// Second pass: images are already uploaded, proceed normally
+		if (readyToSubmit) {
+			readyToSubmit = false;
+			return async ({ result, update }) => {
 				submitting = false;
 				if (result.type === 'redirect') {
 					toasts.success('Produk berhasil disimpan!');
@@ -118,10 +121,39 @@
 				} else {
 					await update();
 				}
-			} catch (error) {
-				submitting = false;
-				uploadProgress = '';
-				toasts.error(error instanceof Error ? error.message : 'Failed to upload images');
+			};
+		}
+
+		// First pass: cancel submission, upload images, then resubmit
+		const pendingImages = images.filter(img => img.file);
+		if (pendingImages.length > 0) {
+			cancel();
+			(async () => {
+				try {
+					await uploadPendingImages();
+					// Wait for Svelte reactivity to update the hidden images_json input
+					await tick();
+					readyToSubmit = true;
+					formEl.requestSubmit();
+				} catch (error) {
+					submitting = false;
+					uploadProgress = '';
+					toasts.error(error instanceof Error ? error.message : 'Failed to upload images');
+				}
+			})();
+			return;
+		}
+
+		// No pending uploads, proceed normally
+		return async ({ result, update }) => {
+			submitting = false;
+			if (result.type === 'redirect') {
+				toasts.success('Produk berhasil disimpan!');
+				await update();
+			} else if (result.type === 'failure') {
+				toasts.error(String(result.data?.error ?? 'Gagal menyimpan produk'));
+			} else {
+				await update();
 			}
 		};
 	}}
@@ -140,7 +172,7 @@
 		<div class="space-y-2">
 			<Label for="slug">Slug *</Label>
 			<Input id="slug" name="slug" bind:value={slug} required placeholder="vespa-sprint-150" />
-			<button type="button" class="text-xs text-[var(--muted-foreground)] hover:underline cursor-pointer" onclick={() => { autoSlug = !autoSlug; }}>
+			<button type="button" class="text-xs text-(--muted-foreground) hover:underline cursor-pointer" onclick={() => { autoSlug = !autoSlug; }}>
 				{autoSlug ? 'Edit slug manually' : 'Auto-generate slug'}
 			</button>
 		</div>

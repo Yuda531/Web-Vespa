@@ -19,7 +19,7 @@
 <div class={cn('space-y-3', className)}>
 	<!-- Main image -->
 	{#if selectedImage}
-		<div class="relative aspect-[4/3] overflow-hidden rounded-[var(--radius)] border border-[var(--border)]">
+		<div class="relative aspect-[4/3] overflow-hidden rounded-(--radius) border border-[var(--border)]">
 			{#key selectedImage.url}
 				<OptimizedImage
 					src={selectedImage.url}
