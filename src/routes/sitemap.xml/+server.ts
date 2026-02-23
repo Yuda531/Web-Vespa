@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { PUBLIC_SITE_URL } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 
 export const GET: RequestHandler = async ({ locals }) => {
 	const { supabase } = locals;
@@ -11,7 +11,7 @@ export const GET: RequestHandler = async ({ locals }) => {
 
 	const products = productsRes.data ?? [];
 	const services = servicesRes.data ?? [];
-	const siteUrl = PUBLIC_SITE_URL || 'https://vespa-abas.com';
+	const siteUrl = env.PUBLIC_SITE_URL || 'https://vespa-abas.com';
 
 	const staticPages = [
 		{ url: '', priority: '1.0', changefreq: 'weekly' },

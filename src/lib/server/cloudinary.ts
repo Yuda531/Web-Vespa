@@ -1,14 +1,20 @@
 import { v2 as cloudinary } from 'cloudinary';
-import { CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET } from '$env/static/private';
-import { PUBLIC_CLOUDINARY_CLOUD_NAME } from '$env/static/public';
+import { env as privateEnv } from '$env/dynamic/private';
+import { env as publicEnv } from '$env/dynamic/public';
 import { CLOUDINARY_FOLDER } from '$lib/constants';
 
-cloudinary.config({
-	cloud_name: PUBLIC_CLOUDINARY_CLOUD_NAME,
-	api_key: CLOUDINARY_API_KEY,
-	api_secret: CLOUDINARY_API_SECRET,
-	secure: true
-});
+let configured = false;
+function ensureConfig() {
+	if (!configured) {
+		cloudinary.config({
+			cloud_name: publicEnv.PUBLIC_CLOUDINARY_CLOUD_NAME,
+			api_key: privateEnv.CLOUDINARY_API_KEY,
+			api_secret: privateEnv.CLOUDINARY_API_SECRET,
+			secure: true
+		});
+		configured = true;
+	}
+}
 
 /**
  * Upload a file buffer to Cloudinary.
@@ -20,6 +26,7 @@ export async function uploadToCloudinary(
 	fileBuffer: Buffer,
 	subfolder: string = 'general'
 ): Promise<{ public_id: string; secure_url: string }> {
+	ensureConfig();
 	return new Promise((resolve, reject) => {
 		const uploadStream = cloudinary.uploader.upload_stream(
 			{
@@ -41,6 +48,7 @@ export async function uploadToCloudinary(
  * Delete an image from Cloudinary by public ID.
  */
 export async function deleteFromCloudinary(publicId: string): Promise<void> {
+	ensureConfig();
 	await cloudinary.uploader.destroy(publicId);
 }
 

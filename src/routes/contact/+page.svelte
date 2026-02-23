@@ -43,7 +43,7 @@
 				<div class="mt-4 space-y-3 text-sm text-(--muted-foreground)">
 					<div class="flex items-start gap-2">
 						<MapPin class="mt-0.5 h-4 w-4 flex-shrink-0" />
-						<span>Indonesia</span>
+						<span>Cipedes, Kec. Paseh, Kabupaten Bandung, Jawa Barat 40383</span>
 					</div>
 					<div class="flex items-start gap-2">
 						<Phone class="mt-0.5 h-4 w-4 flex-shrink-0" />

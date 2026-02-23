@@ -1,7 +1,7 @@
-import { PUBLIC_SITE_URL } from '$env/static/public';
+import { env } from '$env/dynamic/public';
 
 export function GET() {
-	const siteUrl = PUBLIC_SITE_URL || 'https://vespa-abas.com';
+	const siteUrl = env.PUBLIC_SITE_URL || 'https://vespa-abas.com';
 	const body = `User-agent: *
 Allow: /
 Disallow: /admin/
