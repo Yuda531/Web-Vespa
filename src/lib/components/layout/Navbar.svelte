@@ -23,9 +23,10 @@
   >
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2">
-      <span class="font-serif text-xl font-bold text-(--primary)"
+      <span class="font-serif text-4xl font-bold text-(--primary)"
         >{SITE_NAME}</span
       >
+        <!-- <img src="/LogoVespa.png" alt="Logo Vespa Abas" class="h-14 w-auto object-contain"> -->
     </a>
 
     <!-- Desktop nav -->

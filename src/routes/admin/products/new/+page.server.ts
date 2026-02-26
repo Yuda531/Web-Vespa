@@ -26,7 +26,7 @@ export const actions: Actions = {
 
 		const { data: product, error } = await locals.supabase
 			.from('products')
-			.insert(productData)
+			.insert(productData as any)
 			.select()
 			.single();
 
@@ -44,7 +44,7 @@ export const actions: Actions = {
 				}
 				if (validImages.length > 0) {
 					const imageRecords = validImages.map((img: any, idx: number) => ({
-						product_id: product.id,
+						product_id: (product as any).id,
 						cloudinary_public_id: img.public_id,
 						url: img.url,
 						alt_text: img.alt_text || null,

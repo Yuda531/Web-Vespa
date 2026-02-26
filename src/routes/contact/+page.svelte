@@ -47,7 +47,7 @@
 					</div>
 					<div class="flex items-start gap-2">
 						<Phone class="mt-0.5 h-4 w-4 flex-shrink-0" />
-						<span>+62 813-8062-5291</span>
+						<span>+62 895-2810-9463</span>
 					</div>
 					<div class="flex items-start gap-2">
 						<Clock class="mt-0.5 h-4 w-4 flex-shrink-0" />

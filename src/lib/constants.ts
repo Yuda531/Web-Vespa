@@ -1,6 +1,6 @@
-export const WA_NUMBER = '6281380625291';
+export const WA_NUMBER = '6289528109463';
 
-export const SITE_NAME = 'Vespa Abas';
+export const SITE_NAME = "Az'Ar";
 export const SITE_DESCRIPTION =
 	'Jual beli dan restorasi Vespa klasik berkualitas. Temukan Vespa impian Anda — Sprint, PX, Primavera, dan lainnya.';
 export const SITE_TAGLINE = 'Klasik. Otentik. Terpercaya.';

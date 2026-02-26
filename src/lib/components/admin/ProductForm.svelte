@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { tick } from 'svelte';
-	import { cn } from '$lib/utils';
 	import { enhance } from '$app/forms';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
@@ -37,9 +36,23 @@
 
 	let { product, categories, images = $bindable([]), imageSubfolder = 'products', formAction = '?/save', submitLabel = 'Simpan' }: Props = $props();
 
+	// svelte-ignore state_referenced_locally -- intentional: seeds from prop but is user-editable local state
 	let title = $state(product?.title ?? '');
+	// svelte-ignore state_referenced_locally -- intentional: seeds from prop but is user-editable local state
 	let slug = $state(product?.slug ?? '');
-	let autoSlug = $state(!product?.slug);
+	let autoSlug = $derived(!product?.slug);
+
+	// Derived from product prop so Svelte 5 tracks reactivity correctly
+	let productPrice = $derived(String(product?.price ?? ''));
+	let productYear = $derived(String(product?.year ?? ''));
+	let productCategoryId = $derived(product?.category_id ?? '');
+	let productCondition = $derived(product?.condition ?? '');
+	let productStatus = $derived(product?.status ?? 'available');
+	let productDescription = $derived(product?.description ?? '');
+	let productSeoTitle = $derived(product?.seo_title ?? '');
+	let productSeoDescription = $derived(product?.seo_description ?? '');
+	let productWhatsappMessage = $derived(product?.whatsapp_message ?? '');
+	let productFeatured = $derived(product?.featured ?? false);
 	let submitting = $state(false);
 	let uploadProgress = $state('');
 	let readyToSubmit = $state(false);
@@ -181,15 +194,15 @@
 	<div class="grid gap-4 sm:grid-cols-3">
 		<div class="space-y-2">
 			<Label for="price">Harga (IDR)</Label>
-			<Input id="price" name="price" type="number" value={String(product?.price ?? '')} placeholder="25000000" />
+			<Input id="price" name="price" type="number" value={productPrice} placeholder="25000000" />
 		</div>
 		<div class="space-y-2">
 			<Label for="year">Tahun</Label>
-			<Input id="year" name="year" type="number" value={String(product?.year ?? '')} placeholder="1972" />
+			<Input id="year" name="year" type="number" value={productYear} placeholder="1972" />
 		</div>
 		<div class="space-y-2">
 			<Label for="category_id">Kategori</Label>
-			<Select id="category_id" name="category_id" value={product?.category_id ?? ''}>
+			<Select id="category_id" name="category_id" value={productCategoryId}>
 				<option value="">-- Pilih --</option>
 				{#each categories as cat}
 					<option value={cat.id}>{cat.name}</option>
@@ -201,7 +214,7 @@
 	<div class="grid gap-4 sm:grid-cols-2">
 		<div class="space-y-2">
 			<Label for="condition">Kondisi</Label>
-			<Select id="condition" name="condition" value={product?.condition ?? ''}>
+			<Select id="condition" name="condition" value={productCondition}>
 				<option value="">-- Pilih --</option>
 				{#each PRODUCT_CONDITIONS as cond}
 					<option value={cond}>{cond}</option>
@@ -210,7 +223,7 @@
 		</div>
 		<div class="space-y-2">
 			<Label for="status">Status</Label>
-			<Select id="status" name="status" value={product?.status ?? 'available'}>
+			<Select id="status" name="status" value={productStatus}>
 				{#each PRODUCT_STATUSES as s}
 					<option value={s}>{s}</option>
 				{/each}
@@ -220,7 +233,7 @@
 
 	<div class="space-y-2">
 		<Label for="description">Deskripsi</Label>
-		<RichTextEditor content={product?.description ?? ''} name="description" placeholder="Tulis deskripsi produk..." />
+		<RichTextEditor content={productDescription} name="description" placeholder="Tulis deskripsi produk..." />
 	</div>
 
 	<Separator />
@@ -229,21 +242,21 @@
 	<div class="grid gap-4 sm:grid-cols-2">
 		<div class="space-y-2">
 			<Label for="seo_title">SEO Title</Label>
-			<Input id="seo_title" name="seo_title" value={product?.seo_title ?? ''} placeholder="Custom page title" />
+			<Input id="seo_title" name="seo_title" value={productSeoTitle} placeholder="Custom page title" />
 		</div>
 		<div class="space-y-2">
 			<Label for="seo_description">SEO Description</Label>
-			<Input id="seo_description" name="seo_description" value={product?.seo_description ?? ''} placeholder="Custom meta description" />
+			<Input id="seo_description" name="seo_description" value={productSeoDescription} placeholder="Custom meta description" />
 		</div>
 	</div>
 
 	<div class="space-y-2">
 		<Label for="whatsapp_message">WhatsApp Message</Label>
-		<Input id="whatsapp_message" name="whatsapp_message" value={product?.whatsapp_message ?? ''} placeholder="Custom WA message (leave empty for default)" />
+		<Input id="whatsapp_message" name="whatsapp_message" value={productWhatsappMessage} placeholder="Custom WA message (leave empty for default)" />
 	</div>
 
 	<div class="flex items-center gap-2">
-		<input type="checkbox" id="featured" name="featured" checked={product?.featured ?? false} class="rounded" />
+		<input type="checkbox" id="featured" name="featured" checked={productFeatured} class="rounded" />
 		<Label for="featured">Tampilkan di beranda (featured)</Label>
 	</div>
 

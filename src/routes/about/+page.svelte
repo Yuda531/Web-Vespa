@@ -23,7 +23,7 @@
 
 		<div class="mt-8 space-y-6 text-(--muted-foreground) leading-relaxed">
 			<p>
-				{SITE_NAME} lahir dari kecintaan mendalam terhadap Vespa klasik — ikon kendaraan roda dua
+				{SITE_NAME} lahir dari kecintaan mendalam terhadap Vespa klasik, ikon kendaraan roda dua
 				yang telah menjadi bagian dari budaya dan gaya hidup sejak puluhan tahun lalu.
 			</p>
 
@@ -61,7 +61,7 @@
 
 			<p>
 				Apakah Anda sedang mencari Vespa pertama Anda, atau menambah koleksi, kami siap membantu
-				Anda menemukan unit yang sempurna. Jangan ragu untuk menghubungi kami — kami senang
+				Anda menemukan unit yang sempurna. Jangan ragu untuk menghubungi kami, kami senang
 				berbicara tentang Vespa!
 			</p>
 		</div>
